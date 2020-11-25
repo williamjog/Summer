@@ -416,7 +416,7 @@ Você irá desenvolver 2 exercícios para ampliar seus conhecimentos de Redux co
 
 ## Recursos adicionais (opcional)
 
-[link](#https://medium.com/the-web-tub/managing-your-react-state-with-redux-affab72de4b1)
+<a href="https://medium.com/the-web-tub/managing-your-react-state-with-redux-affab72de4b1">Link to Header</a>
 
 
 
