@@ -209,7 +209,7 @@
       return (
         <div>
           <Provider store={ store }> 
-            // o provider é o meio pelo qual disponibilizamos o Store.
+            // o provider é o meio pelo qual disponibilizamos o Store para a nossa aplicação.
             // componentes aqui
           </Provider>
         </div>
@@ -220,4 +220,63 @@
   export default App;
  ```
 
+ Agora vamos adicionar os nossos componentes shoppingList.js e inputsList e conectá-los ao Redux utilizando o Provider com uma ***prop*** chamada store que contém o nosso store importado.
+ Não podemos nos esquecer de importar e adicionar os componentes ao componente App:
 
+ ```javascript
+  import React from 'react';
+  import { Provider } from 'react-redux';
+  import store from './store';
+  import ShoppingList from './ShoppingList';
+  import InputsList from './InputsList';
+
+  class App extends React.Component {
+    render() {
+      return (
+        <div>
+          <Provider store={ store }>
+            <InputsList />
+            <ShoppingList />
+          </Provider>
+        </div>
+      );
+    }
+  }
+
+  export default App;
+ ```
+
+ Depois, vamos realizar a implementação do componente InputsList:
+
+  ```javascript
+  import React from 'react';
+  import { connect } from 'react-redux';
+  import { addAssignment } from './actions';
+
+  class InputsList extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { product: '' };
+    }
+
+    render() {
+      return (
+        <div>
+          <input
+            type="text"
+            placeholder="Digite o nome do produto"
+            onChange={event => this.setState({ product: event.target.value })}
+          />
+          <button onClick={() => this.props.add(this.state.product)}>
+            Adicionar um novo produto à lista de compras
+          </button>
+        </div>
+      );
+    }
+  }
+
+  const mapDispatchToProps = dispatch => ({
+    add: product => dispatch(addAssignment(product))});
+
+  export default connect(null, mapDispatchToProps)(InputsList);
+ ```
