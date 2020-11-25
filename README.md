@@ -381,13 +381,13 @@ Por sua vez, a estrutura de *conexão* entre o *React* e o ***Redux*** é compos
 
  2. O <code>Store</code> é provido através do <code>Provider</code> para todos os componentes da aplicação;
 
- 3. É através do <code>connect</code> que os componentes se <i>conectam</i> ao <code>Store</code>
+ 3. É através do <code>connect</code> que os componentes se <i>conectam</i> ao <code>Store</code>;
 
  4. Devemos utilizar o método <code>combineReducers</code> passando como parâmetro o(s) reducer(s) que existe(m), ainda que tenhamos apenas um <code>reducer</code>, de forma a permitir a escalabilidade da aplicação;
 
- 5. Existem métodos nativos do ***Redux*** o primeiro deles chamado de <code>mapStateToProps</code> que é responsável pela leitura do estado global;
+ 5. Existem métodos nativos do ***Redux***, o primeiro deles chamado de <code>mapStateToProps</code> que é responsável pela leitura do estado global;
 
- 6. O segundo deles, chamado de <code>mapDispatchToProps</code> é responsável por enviar as actions, que por sua vez, irão instruir o reducer a alterar o seu estado atual;
+ 6. O segundo deles, chamado de <code>mapDispatchToProps</code> é responsável por enviar as <b><i>Actions</i></b>, que por sua vez, irão instruir o reducer a alterar o seu estado atual;
 
  7. As pessoas usuárias que utilizam a aplicação interagem com ela e disparam eventos;
 
@@ -395,7 +395,30 @@ Por sua vez, a estrutura de *conexão* entre o *React* e o ***Redux*** é compos
 
  9. <b><i>Actions</i></b>, por convenção, devem possuir ser um <i>objeto javascript</i> que deverá possuir uma chave (<i>key</i>) chamada <code>type</code>;
 
- 10. O(s) <code>reducer(s)</code> recebe(m) essas <b><i>Actions</i></b> e realiza(m) alguma alteração no estado da aplicação (criando um novo estado) e salvando o novo estado no <code>Store</code> para manter a imutabilidade do mesmo;
+ 10. O(s) <code>reducer(s)</code> recebe(m) essas <b><i>Actions</i></b> e realiza(m) alguma alteração no estado da aplicação e salvando o novo estado no <code>Store</code> para manter a imutabilidade do mesmo;
 
  11. Os componentes conectados ao <code>Store</code> "observam" tais mudanças e atualizam a visualização da aplicação (View);
+
+## Exercícios
+#### <sup>Tempo sugerido para realização: 80 minutos</sup>
+
+## Agora a prática
+
+Você irá desenvolver 2 exercícios para ampliar seus conhecimentos de Redux com React:
+ 
+ 1. 
+
+
+
+## BÔNUS
+
+ 1. 
+
+## Recursos adicionais (opcional)
+
+[Markdown - Link](#https://codeburst.io/redux-devtools-for-dummies-74566c597d7)
+
+[Markdown - Link](#https://medium.com/the-web-tub/managing-your-react-state-with-redux-affab72de4b1)
+
+[Markdown - Link](#https://medium.com/@hliojnior_34681/entenda-react-e-redux-de-uma-vez-por-todas-c761bc3194ca)
 
