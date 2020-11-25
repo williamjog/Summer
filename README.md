@@ -220,7 +220,9 @@
   export default App;
  ```
 
- Agora vamos adicionar os nossos componentes shoppingList.js e inputsList e conectá-los ao Redux utilizando o Provider com uma ***prop*** chamada store que contém o nosso store importado.
+ Agora vamos adicionar os nossos componentes shoppingList.js e inputsList e conectá-los ao Redux utilizando o Provider com uma ***prop*** chamada store que contém o nosso <b><i>store</i></b> 
+ importado.
+ 
  Não podemos nos esquecer de importar e adicionar os componentes ao componente App:
 
  ```javascript
