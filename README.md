@@ -53,7 +53,7 @@
   ```bash
   npm install react-redux
   ```
-  <sup><b><i>React Redux</i></b> é a biblioteca oficial para realizar a conexão entre <i><b>React</b></i> e o <i><b>Redux</b></i>.</sup>
+  <sup><b><i><code>react redux</i></b></code> é a biblioteca oficial para realizar a conexão entre <i><b>React</b></i> e o <i><b>Redux</b></i>.</sup>
 
   Antes de continuarmos para o entendimento da estrutura do React com Redux, vamos recapitular alguns conceitos importantes:
 
@@ -96,5 +96,5 @@
   npm install --save redux react-redux
   ```
   <h4><sup><code>redux</code> é a biblioteca que possui toda a implementação do <b><i>Redux</i></b>.</h4>
-  
+
   <h4><sup><code>react redux</code> é a biblioteca que realiza a conexão necessária para a implementação do <b><i>React</i></b> e do <b><i>Redux</i></b>.</h4>
