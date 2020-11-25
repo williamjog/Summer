@@ -152,7 +152,7 @@
   Agora, vamos criar o arquivo <code>src/actions/index.js</code>, que irá conter a nossa <code>action</code>:
 
   ```javascript
-  export const addAssignment = (value) => ({ type: 'ADD_PRODUCT', value });
+  export const addProduct = (value) => ({ type: 'ADD_PRODUCT', value });
   ```
 
   Essa <b><i>action</i></b>, que é um objeto javascript, deve possuir a <i>key</i> type ou mais outras <i>keys</i>, caso seja interessante. Perceba que também criamos uma varíavel chamada 
@@ -179,8 +179,8 @@
 
   Continuando, passamos para a função <code>createStore</code> o <code>rootReducer</code> que contém o nosso <code>reducer</code> criado anteriormente.
 
-  Quando a função <code>combineReducers</code> é utilizada, o estado da nossa aplicação fica disposto em um objeto. Nesse objeto, cada reducer será representado por uma chave com o seu respectivo
-  nome e terá como valor o estado que é responsável por controlar.
+  Quando a função <code>combineReducers</code> é utilizada, o estado da nossa aplicação fica disposto em um objeto. Nesse objeto, cada reducer será representado por uma chave com o seu próprio
+  nome que definimos e terá como valor o estado que é responsável por controlar.
 
   Observe como o estado inicial da nossa aplicação ficaria:
 
@@ -222,7 +222,7 @@
 
  Agora vamos adicionar os nossos componentes shoppingList.js e inputsList e conectá-los ao Redux utilizando o Provider com uma ***prop*** chamada store que contém o nosso <b><i>store</i></b> 
  importado.
- 
+
  Não podemos nos esquecer de importar e adicionar os componentes ao componente App:
 
  ```javascript
@@ -253,7 +253,7 @@
   ```javascript
   import React from 'react';
   import { connect } from 'react-redux';
-  import { addAssignment } from './actions';
+  import { addProduct } from './actions';
 
   class InputsList extends React.Component {
     constructor(props) {
@@ -278,7 +278,7 @@
   }
 
   const mapDispatchToProps = dispatch => ({
-    add: product => dispatch(addAssignment(product))});
+    add: product => dispatch(addProduct(product))});
 
   export default connect(null, mapDispatchToProps)(InputsList);
  ```
