@@ -95,7 +95,5 @@
   ```bash
   npm install --save redux react-redux
   ```
-  
   <sup><code>redux</code> é a biblioteca que possui toda a implementação do <b><i>Redux</i></b>.
-
   <sup><code>react redux</code> é a biblioteca que realiza a conexão necessária para a implementação do <b><i>React</i></b> e do <b><i>Redux</i></b>.
