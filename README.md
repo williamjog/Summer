@@ -174,7 +174,22 @@
   Note que utilizamos a função <code>combineReducer</code>, que faz exatamente o que o nome sugere combina todos os reducers passados como parâmetro, passando como parâmetro um objeto que contém o nosso <code>reducer</code>. 
   
   <blockquote> Dica: Perceba que é interessante, mesmo que tenhamos apenas um <code>reducer</code> na nossa aplicação, utilizar o método <code>combineReducer</code>, pois se for necessário (e provavelmente será!) adicionar novos <code>reducers</code> caso a aplicação
-  cresca, não será precisaremos alterar toda a lógica constrúida anteriormente. :sunglasses:
+  cresca, não precisaremos alterar toda a lógica constrúida anteriormente. :sunglasses:
   </blockquote>
 
   Continuando, passamos para a função <code>createStore</code> o <code>rootReducer</code> que contém o nosso <code>reducer</code> criado anteriormente.
+
+  Quando a função <code>combineReducers</code> é utilizada, o estado da nossa aplicação fica disposto em um objeto. Nesse objeto, cada reducer será representado por uma chave com o seu respectivo
+  nome e terá como valor o estado que é responsável por controlar.
+
+  Observe como o estado inicial da aplicação ficaria:
+
+  ```javascript
+  {
+  shoppingListReducer: [],
+  }
+  ```
+
+ <blockquote> Dica super valiosa: Para facilitar o uso cotidiano do Redux nas suas aplicações, sugerimos baixar a extensão <code>Redux Devtools</code>, na seção de <code>Recursos Adicionais</code>
+ você encontrará um link explicando como instalá-la e utilizá-la.
+ </blockquote>
