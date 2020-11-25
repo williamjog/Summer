@@ -208,7 +208,7 @@
       return (
         <div>
           <Provider store={ store }> 
-            // o provider é o meio pelo qual disponibilizamos o Store para a nossa aplicação.
+            // o provider é o meio pelo qual disponibilizamos o Store para os componentes da nossa aplicação.
             // componentes aqui
           </Provider>
         </div>
@@ -251,7 +251,7 @@
 
   ```javascript
   import React from 'react';
-  import { connect } from 'react-redux';
+  import { connect } from 'react-redux'; // importamos de forma { desestruturada } o connect da biblioteca react-redux;
   import { addProduct } from './actions'; // como definimos o arquivo como index.js não precisamos especificar a qual arquivo estamos nos referindo!
   
   class InputsList extends React.Component {
@@ -321,7 +321,7 @@
 
  ```javascript
   import React from 'react';
-  import { connect } from 'react-redux';
+  import { connect } from 'react-redux'; // importamos de forma { desestruturada } o Provider da biblioteca react-redux;
 
   class ShoppingList extends React.Component {
     render() {
@@ -344,6 +344,11 @@
 ```
  Vamos dar uma analisada nesse código:
 
- * Mas, calma aí! Nós estamos fazendo um map com os elementos presentes no array shoppingList que, por sua vez, está presente no componente como props. Mas como isso foi parar lá? Foi mágica? Não, vamos entender, finalmente, o <code>mapStateToProps</code>.
+ * Mas, calma aí! Nós estamos fazendo um map com os elementos presentes no array <code>shoppingList</code> que, por sua vez, está presente no componente como props. Mas como isso foi parar lá? Foi mágica? Não, vamos entender, finalmente, o <code>mapStateToProps</code>.
 
 ## mapStateToProps
+
+A função <code>mapStateToProps</code> realiza a "<b><i>leitura</i></b>" das entidades armazenadas nos estados para uma ***prop***, ela funciona como um <code>getter</code> do estado global e o insere em uma ***prop*** que você, como pessoa desenvolvedora, irá escolher qualquer bom nome, no exemplo anterior nomeamos a ***prop*** como <code>shoppingList</code>, mas poderia ser qualquer outro nome!
+
+Perceba que as estruturas dos métodos nativos <code>mapStateToProps</code> e <code>mapDispatchToProps</code> sempre serão as mesmas, o que irá mudar são as propriedades que vamos acessar ou actions que vamos disparar! No caso acima, o que iria mudar seria a ***prop*** lida do estado global, porém, a estrutura permaneceria igual, ainda continuaríamos precisando passar o <code>state</code> como parâmetro e note que escolhemos, também, o <code>reducer</code> no qual está armazenada essa informação, no nosso caso é no <code>shoppingListReducer</code>.
+
