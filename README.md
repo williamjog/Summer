@@ -102,7 +102,8 @@
   Agora, vamos imaginar que precisamos implementar uma solução com <b><i>Redux</i></b> para uma aplicação que simula um almoxarifado, neste almoxarifado podemos adicionar 
   e excluir itens, tudo baseado em seu estado atual.
 
-  O nosso primeiro passo deverá ser criar o armazém universal de todos estados da nossa aplicação, o <b><i>Store</b></i>. 
+  O nosso primeiro passo é criar o armazém universal de todos estados da nossa aplicação, o <b><i>Store</b></i>. É nele que ficarão <b>todos</b> os possíveis estados da nossa
+  aplicação, pense nele como a única fonte da verdade no que diz respeito aos estados (<i>states</i>) da sua aplicação. 
 
   Portanto, vamos criar um arquivo <code>src/store/index.js que irá conter o seguinte conteúdo:
 
