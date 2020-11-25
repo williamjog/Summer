@@ -416,9 +416,7 @@ Você irá desenvolver 2 exercícios para ampliar seus conhecimentos de Redux co
 
 ## Recursos adicionais (opcional)
 
-[Markdown - Link](#https://codeburst.io/redux-devtools-for-dummies-74566c597d7)
+[link](#https://medium.com/the-web-tub/managing-your-react-state-with-redux-affab72de4b1)
 
-[Markdown - Link](#https://medium.com/the-web-tub/managing-your-react-state-with-redux-affab72de4b1)
 
-[Markdown - Link](#https://medium.com/@hliojnior_34681/entenda-react-e-redux-de-uma-vez-por-todas-c761bc3194ca)
 
