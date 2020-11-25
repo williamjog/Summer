@@ -139,11 +139,21 @@
   * Definimos um estado inicial para o nosso <code>reducer</code> de lista de compras, neste caso na varíavel <code>INITAL_STATE</code> que recebe um array vazio inicialmente, pois
   vamos precisar adicionar itens que pretendemos comprar no futuro.
 
-  * A função shoppingListReducer é o nosso <code>reducer</code>, que recebe como parâmetro default, ou seja, se não enviarmos um novo estado o <code>reducer</code> irá receber o que 
+  * A função <code>shoppingListReducer<code> é o nosso <code>reducer</code>, que recebe como parâmetro default, ou seja, se não enviarmos um novo estado o <code>reducer</code> irá receber o que 
   existe dentro do array <code>INITAL_STATE</code>, o estado inicial que acabamos de definir e uma <b><i>action</i></b>.
 
-  * A <b><i>action</i></b>., por convenção mesmo, é um objeto que deverá possuir uma chave (key) <code>type</code>. É exatamente com essa chave que o <code>reducer</code> irá manipular o estado,
-  através de um <code>switch</code> na maioria dos casos.
+  * A <b><i>action</i></b>, por convenção, é um objeto que deverá possuir uma chave (<i>key</i>) chamada <code>type</code>. É exatamente com essa chave que o <code>reducer</code> irá manipular o estado, através de um <code>switch</code> na maioria dos casos.
 
-  * No exemplo acima, estamos querendo adicionar um produto a nossa lista de compras, então caso o type da action seja <code>ADD_PRODUCT</code>, vamos utilizar o operador
+  * No exemplo acima, estamos querendo adicionar um produto a nossa lista de compras, então caso o <code>type</code> da action seja <code>ADD_PRODUCT</code>, vamos utilizar o operador
   <code>spread</code> para que assim seja mantido as informações anteriores, e vamos passar também o value da <b><i>action</i></b> para complementar o estado atual com esta nova informação.
+
+  * Caso o <code>type</code> da action não seja <code>ADD_PRODUCT</code>, então o reducer irá retornar somente o estado atual, não alterando nenhuma informação.
+
+  Agora, vamos criar o arquivo <code>src/actions/index.js</code>, que irá conter todas a nossa <code>action</code>:
+
+  ```javascript
+  export const addAssignment = (value) => ({ type: 'ADD_PRODUCT', value });
+  ```
+
+  Essa <b><i>action</i></b>, que é um objeto javascript, deve possuir a <i>key</i> type ou mais outras <i>keys</i>, caso seja interessante. Perceba que também criamos uma varíavel chamada 
+  <code>value</code> que irá guardar o valor recebido da <b><i>action</i></b>.
