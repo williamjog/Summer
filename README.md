@@ -279,28 +279,71 @@
   const mapDispatchToProps = dispatch => ({
     add: product => dispatch(addProduct(product))});
 
-  export default connect(null, mapDispatchToProps)(InputsList);
+  export default connect(null, mapDispatchToProps)(InputsList); // O null ocupa o lugar do mapStateToProps, afinal não precisamos ler nada do estado global, apenas enviar uma prop para lá!
  ```
 
  Calma! Vamos entender o que está acontecendo aqui:
 
- * Primeiro de tudo, nós estamos definindo um estado local do componente chamado <code>product</code> que inicia com uma string vazia. Interessante notar que, apesar de estarmos usando o Redux, que centraliza todos os states, caso exista algum estado o qual não precisamos inserir no estado global, podemos declará-lo localmente sem problema algum! Isto é normal e muito comum, pois nem tudo precisa, necessariamente, estar no estado global da aplicação.
+ * Primeiro de tudo, nós estamos definindo um estado local do componente chamado <code>product</code> que inicia com uma string vazia. Interessante notar que, apesar de estarmos usando o Redux, que centraliza todos os states, caso exista algum estado o qual não precisamos inserir no estado global, podemos declará-lo localmente sem problema algum! Isto é normal e muito comum, pois nem tudo precisa, necessariamente, estar disponível globalmente na aplicação.
 
- * Criamos um input do tipo texto para a pessoa usuária possa adicionar um produto à sua lista de compras. A cada mudança no valor do input, este é salvo na chave <code>product</code> através da propriedade <code>onChange</code>.
+ * Criamos um <code>input</code> do tipo texto para a pessoa usuária possa adicionar um produto à sua lista de compras. A cada mudança no valor do <code>input</code>, este é salvo na chave <code>product</code> por meio da propriedade <code>onChange</code>.
 
- * Mas, calma lá! Tem um botão com a propriedade onClick criado, passando para uma função <code>add</code> que está presente nas <code>props</code> do componente. O que é? Como vive? Do que se alimenta? E o que é esse <code>connect</code>? Vamos entender agora: 
+ * Mas, calma lá! Tem um botão com a propriedade <code>onClick</code> criado, passando para uma função <code>add</code> que está presente nas <code>props</code> do componente. O que é? Como vive? Do que se alimenta? E o que é esse <code>connect</code>? Vamos entender agora: 
 
 
 ## mapDispatchToProps
 
-  A função <code>mapDispatchToProps</code> é a responsável por enviar uma ação para o reducer. Ou seja, é como se fosse um setter de uma propriedade para o estado global, fazendo uma analogia aos nossos <code>get</code> e <code>set</code> famosos nesse mundo da programação.
+  A função <code>mapDispatchToProps</code> é a responsável por enviar uma ação para o reducer. Ou seja, é como se fosse um setter de uma propriedade para o estado global, fazendo uma analogia aos nossos <code>get</code> e <code>set</code> famosos nesse nosso mundo da programação.
 
   Para podermos ter acesso às essas funcionalidades do Redux, seja a de ler (mapStateToProps, que veremos a seguir!) os dados ou enviá-los (mapDispatchToProps), precisamos acessá-las como ***props*** de um componente. Por isso, como o próprio nome da função infere, ela mapeia (envia) os <code>dispatchs</code> para as ***props*** do componente no qual estamos trabalhando.
 
   Perceba que no ínicio do arquivo estamos importanto a action addProduct, criada por nós anteriormente. Neste caso, estamos nomeando arbitrariamente (pode ser o nome que você quiser!) uma propriedade chamada <code>add</code>, que faz o dispatch da action addProduct com um parâmetro arbitrário, porém é interessante associar um nome que faça sentido, chamado product.
 
-  O mapDispatchToProps (setter para o estado global das ***props***), assim como o mapStateToProps (já iremos ver!), podem ser criados via funções convencionais (<code>functions</code>) ou arrow functions (<code>=></code>). O que importa é que o retorno seja um objeto, pois o <b><i>Redux</i></b> espera desta assim.
+  O mapDispatchToProps (setter para o estado global das ***props***), assim como o mapStateToProps (já iremos ver!), podem ser criados via funções convencionais (<code>functions</code>) ou arrow functions (<code>=></code>). O que importa é que o retorno seja um objeto, pois o <b><i>Redux</i></b> espera assim.
 
   Não esqueça! Podemos apenas enviar uma <code>action</code> para um <code>reducer</code> através de um <code>dispatch</code>, como demonstrado no código acima. Ou seja, o dispatch é uma função que recebe outra função, definida por nós, que dentro dela está a <code>action ({ type: 'ADD_PRODUCT', value })</code>.
 
   E por fim estamos utilizando a função <code>connect</code> para, como o próprio nome dá a entender, <i>conectar</i> o <code>Redux</code> ao nosso componente.
+
+
+## connect
+
+ O método connect possui uma sintaxe um pouco incomum, mas não se assuste, não se preocupe em entender o porquê dela ser desta maneira, mas sim em como usá-la neste primeiro momento!
+
+ A sintaxe dela é assim: <code>connect()()</code> é essa função que faz a ponte entre o <code>Store</code> do ***Redux*** e o componente.
+
+ No primeiro parênteses, devem estar presentes os métodos nativos do ***Redux***, que são o <code>mapStateToProps</code> (iremos ver logo abaixo!) e o <code>mapDispatchToProps</code>. Mas para termos condições de entender o contexto vamos fazer a analogia com o <code>get</code> e o<code>set</code>, o <code>mapStateToProps</code> seria o getter e o <code>mapDispatchToProps</code> seria o setter.
+ Quando queremos passar uma ***prop*** para que ela exista no estado global, usamos o <code>mapDispatchToProps</code> e quando queremos ler do estado global utilizamos <code>mapStateToProps</code>.
+
+ No segundo parênteses, passamos o próprio componente.
+
+ Agora, vamos criar o nosso <code>ShoppingList</code>:
+
+ ```javascript
+  import React from 'react';
+  import { connect } from 'react-redux';
+
+  class ShoppingList extends React.Component {
+    render() {
+      return (
+        <div>
+          <div>
+            {this.props.shoppingList.map(element => (
+              <p>{element}</p>
+            ))}
+          </div>
+        </div>
+      );
+    }
+  }
+
+  const mapStateToProps = state => ({
+    shoppingList: state.listReducer});
+
+  export default connect(mapStateToProps, null)(List);
+```
+ Vamos dar uma analisada nesse código:
+
+ * Estamos fazendo um map com os elementos presentes no array shoppingList que, por sua vez, está presente como props. Mas como isso foi parar lá? Foi mágica? Não, vamos entender, finalmente, o <code>mapStateToProps</code>.
+
+## mapStateToProps
