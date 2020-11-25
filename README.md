@@ -171,7 +171,10 @@
   export default store;
   ```
 
-  Note que utilizamos a função <code>combineReducer</code>, que faz exatamente o que o nome sugere combina todos os reducers passados como parâmetro, passando como parâmetro um objeto que contém o nosso <code>reducer</code>. Perceba que é interessante, mesmo que tenhamos apenas um <code>reducer</code> na nossa aplicação, utilizar o método <code>combineReducer</code>, pois se for necessário (e provavelmente será!) adicionar novos <code>reducers</code> caso a aplicação
+  Note que utilizamos a função <code>combineReducer</code>, que faz exatamente o que o nome sugere combina todos os reducers passados como parâmetro, passando como parâmetro um objeto que contém o nosso <code>reducer</code>. 
+  
+  <blockquote> Dica: Perceba que é interessante, mesmo que tenhamos apenas um <code>reducer</code> na nossa aplicação, utilizar o método <code>combineReducer</code>, pois se for necessário (e provavelmente será!) adicionar novos <code>reducers</code> caso a aplicação
   cresca, não será precisaremos alterar toda a lógica constrúida anteriormente. :sunglasses:
+  </blockquote>
 
   Continuando, passamos para a função <code>createStore</code> o <code>rootReducer</code> que contém o nosso <code>reducer</code> criado anteriormente.
