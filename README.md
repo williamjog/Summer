@@ -194,7 +194,7 @@
  </blockquote>
 
  Pronto! <code>Store</code>, <code>Reducer</code> e <code>Action</code> corretamente criados. Pode parecer que isso está fora de contexto de uma aplicação React, e até o momento realmente está 
- porque essa é puramente a estrutura do <code>Redux</code>. O próximo passo é conectá-lo ao *React*.
+ porque essa é puramente a estrutura do <code>Redux</code>. O próximo passo é conectá-la ao *React*.
 
  Para fazermos uso do estado compartilhado que o **Redux** provê, vamos editar o arquivo <code>src/App.js</code> com as seguintes informações:
 
@@ -357,3 +357,9 @@ Perceba que as estruturas dos métodos nativos <code>mapStateToProps</code> e <c
 No caso acima, o que iria mudar seria a ***prop*** lida do estado global, porém, a estrutura permaneceria igual, ainda continuaríamos precisando passar o <code>state</code> como parâmetro e note que escolhemos, também, o <code>reducer</code> no qual está armazenada essa informação, no nosso caso é no <code>shoppingListReducer</code>.
 
 Por fim, <b><i>conectamos</i></b> o ***Redux*** ao componente, fazendo uso do <code>connect()()</code>. Como, neste caso, estamos fazendo apena a leitura dos dados, passamos a função  <code>mapStateToProps</code> e em seguida <code>null</code> no primeiro parênteses e o componente no segundo, respeitando assim a sintaxe.
+
+Pronto, ufa! A estrutura react-redux está concluída! Perceba que a estrutura pura do ***Redux*** constitui-se em: <b><i>store</i></b>, <b><i>actions</b></i> e <b><i>reducers</i></b>. 
+
+Por sua vez, a estrutura de ***conexão*** entre o React e o Redux é composta basicamente por: 
+
+* <b><i>provider<b></i>, <b><i>connect</i></b>, <b><i>dispatch</b></i>, <b><i>mapDispatchToProps</b></i> e <b><i>mapStateToProps</i></b>. 
