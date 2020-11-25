@@ -59,6 +59,5 @@
 
   ### Store
   <blockquote>
-  Uma ***store*** contém toda a árvore de estado da sua aplicação. A única maneira de alterar o estado dentro dela é realizando um dispatch
-  de uma ação.
+  Uma store contém toda a árvore de estado da sua aplicação. A única maneira de alterar o estado dentro dela é enviando uma <i>action<i>.
   <blockquote>
