@@ -144,8 +144,8 @@
 
   * A <b><i>action</i></b>, por convenção, é um objeto que deverá possuir uma chave (<i>key</i>) chamada <code>type</code>. É exatamente com essa chave que o <code>reducer</code> irá manipular o estado, através de um <code>switch</code> na maioria dos casos.
 
-  * No exemplo acima, estamos querendo adicionar um produto a nossa lista de compras, então caso o <code>type</code> da action seja <code>ADD_PRODUCT</code>, vamos utilizar o operador
-  <code>spread</code> para que assim seja mantido as informações anteriores, e vamos passar também o value da <b><i>action</i></b> para incrementar o estado atual com esta nova informação.
+  * No exemplo acima, estamos querendo adicionar um produto a nossa lista de compras, então caso o <code>type</code> da <b><i>action</i></b> seja <code>ADD_PRODUCT</code>, vamos utilizar o operador
+  <code>spread (...)</code> para que assim seja mantido as informações anteriores, e vamos passar também o value da <b><i>action</i></b> para incrementar o estado atual com esta nova informação.
 
   * Caso o <code>type</code> da action não seja <code>ADD_PRODUCT</code>, então o <code>reducer</code> irá retornar somente o estado atual, não alterando nenhuma informação.
 
@@ -356,4 +356,4 @@ Perceba que as estruturas dos métodos nativos <code>mapStateToProps</code> e <c
 
 No caso acima, o que iria mudar seria a ***prop*** lida do estado global, porém, a estrutura permaneceria igual, ainda continuaríamos precisando passar o <code>state</code> como parâmetro e note que escolhemos, também, o <code>reducer</code> no qual está armazenada essa informação, no nosso caso é no <code>shoppingListReducer</code>.
 
-Por fim, <b><i>conectamos</i></b> o ***Redux*** ao componente, fazendo uso do <code>connect()()</code>. Como, neste caso, estamos fazendo apena a leitura dos dados, passamos <code>mapStateToProps</code> e em seguida <code>null</code> no primeiro parênteses e o componente no segundo, respeitando assim a sintaxe.
+Por fim, <b><i>conectamos</i></b> o ***Redux*** ao componente, fazendo uso do <code>connect()()</code>. Como, neste caso, estamos fazendo apena a leitura dos dados, passamos a função  <code>mapStateToProps</code> e em seguida <code>null</code> no primeiro parênteses e o componente no segundo, respeitando assim a sintaxe.
