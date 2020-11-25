@@ -30,7 +30,7 @@
 
   Já pensou no trabalhão que seria isso e na quantidade de possíveis erros que poderiam acontecer? :grimacing:
 
-  Pensando neste cenário, seria ótimo se houvesse uma maneira de **armazenar** tudo em um único local de fácil acesso, por exemplo
+  Pensando neste cenário, seria ótimo se houvesse uma maneira de **armazenar** tudo em um único local de fácil acesso, por exemplo,
   em um estado unificado, não é mesmo?
 
   Pois é aí que entra o **Redux**! Ele é o responsável por gerenciar um *state* de forma global e acessível de qualquer lugar da sua
@@ -38,7 +38,7 @@
   necessitam, que neste cenário hipotético, possuem como único objetivo fazer a intermediação da ***props*** para o componente desejado.
 
 ## Conteúdos
-###### Tempo sugerido para realização: 120 minutos
+###### <sup>Tempo sugerido para realização: 120 minutos</sup>
   
   Redux é uma biblioteca externa que pode ser utilizada com React, Vue, Angular e JavaScript puro, para dar *poucos* exemplos.
 
@@ -59,11 +59,17 @@
 
   ### Store
   <blockquote>
-  Uma <i>store</i> contém e <i><b>compartilha</b></i> toda a árvore de estado da sua aplicação. A única maneira de alterar o estado dentro dela é enviando uma <i>action</i>.
+  Uma <i>store</i> contém e <i><b>compartilha</b></i> toda a árvore de estado da sua aplicação. A única maneira de alterar o estado dentro dela é enviando uma <i>action</i> 
+  através de um <i>dispatcher</i>.
   </blockquote>
 
   ### Action
   <blockquote>
   As <i><b>actions</b></i> são <b>objetos javascript</b> que indicam diretamente uma <b>intenção</b> de mudança/alteração no <i>State</i> aplicação, essa Action pode ser algo disparado pelo próprio 
   usuário ou algo disparado pela própria aplicação.
+  </blockquote>
+
+  ### Reducer
+  <blockquote>
+  É uma função <i>JavaScript</i> que recebe o estado atual (current state) e a <i>action</i> enviada pelo <i>dispatcher</i>
   </blockquote>
