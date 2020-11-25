@@ -397,7 +397,7 @@ Por sua vez, a estrutura de *conexão* entre o *React* e o ***Redux*** é compos
 
  10. O(s) <code>reducer(s)</code> recebe(m) essas <b><i>Actions</i></b> e realiza(m) alguma alteração no estado da aplicação e salvando o novo estado no <code>Store</code> para manter a imutabilidade do mesmo;
 
- 11. Os componentes conectados ao <code>Store</code> "observam" tais mudanças e atualizam a visualização da aplicação (<i>View<i>);
+ 11. Os componentes conectados ao <code>Store</code> "observam" tais mudanças e atualizam a visualização da aplicação (<i>View</i>);
 
 ## Exercícios
 #### <sup>Tempo sugerido para realização: 80 minutos</sup>
@@ -408,13 +408,11 @@ Você irá desenvolver 2 exercícios para ampliar seus conhecimentos de Redux co
  
  1. 
 
-
+ 2.
 
 ## BÔNUS
 
  1. 
-
- 2.
 
 ## Recursos adicionais (opcional)
 
