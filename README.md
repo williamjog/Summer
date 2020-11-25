@@ -356,4 +356,4 @@ Perceba que as estruturas dos métodos nativos <code>mapStateToProps</code> e <c
 
 No caso acima, o que iria mudar seria a ***prop*** lida do estado global, porém, a estrutura permaneceria igual, ainda continuaríamos precisando passar o <code>state</code> como parâmetro e note que escolhemos, também, o <code>reducer</code> no qual está armazenada essa informação, no nosso caso é no <code>shoppingListReducer</code>.
 
-Por fim, <b><i>conectamos</i></b> o ***Redux*** ao componente, fazendo uso do <code>connect()()</code>. Como, neste caso, estamos fazendo apena a leitura dos dados, passamos <code>null</code> seguida da função <code>mapStateToProps</code> no primeiro parênteses e o componente no segundo, respeitando assim a sintaxe.
+Por fim, <b><i>conectamos</i></b> o ***Redux*** ao componente, fazendo uso do <code>connect()()</code>. Como, neste caso, estamos fazendo apena a leitura dos dados, passamos <code>mapStateToProps</code> seguido da função <code>null</code> no primeiro parênteses e o componente no segundo, respeitando assim a sintaxe.
