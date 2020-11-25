@@ -171,7 +171,8 @@
   export default store;
   ```
 
-  Note que utilizamos a função <code>combineReducers</code>, que faz exatamente o que o nome sugere combina todos os reducers passados como parâmetro, passando como parâmetro um objeto que contém o nosso <code>reducer</code>. 
+  Note que utilizamos a função 
+  , que faz exatamente o que o nome sugere combina todos os reducers passados como parâmetro, passando como parâmetro um objeto que contém o nosso <code>reducer</code>. 
   
   <blockquote> Dica: Perceba que é interessante, mesmo que tenhamos apenas um <code>reducer</code> na nossa aplicação, utilizar o método <code>combineReducers</code>, pois se for necessário (e provavelmente será!) adicionar novos <code>reducers</code> caso a aplicação
   cresca, não precisaremos alterar toda a lógica constrúida anteriormente. :sunglasses:
@@ -373,3 +374,28 @@ Por sua vez, a estrutura de *conexão* entre o *React* e o ***Redux*** é compos
  Abaixo, temos uma imagem que demonstra, de forma simplificada, o caminho das informações dentro de uma aplicação React com ***Redux***:
 
  ![reduxInformationTraffic](https://miro.medium.com/max/1200/0*95tBOgxEPQAVq9YO.png)
+
+ Depois de tudo isso, vamos recapitular os principais pontos abordados hoje:
+
+ 1. Um <code>Store</code> é criado para servidr de armazém para todos os estados da aplicação;
+
+ 2. O <code>Store</code> é provido através do <code>Provider</code> para todos os componentes da aplicação;
+
+ 3. É através do <code>connect</code> que os componentes se <i>conectam</i> ao <code>Store</code>
+
+ 4. Devemos utilizar o método <code>combineReducers</code> passando como parâmetro o(s) reducer(s) que existe(m), ainda que tenhamos apenas um <code>reducer</code>, de forma a permitir a escalabilidade da aplicação;
+
+ 5. Existem métodos nativos do ***Redux*** o primeiro deles chamado de <code>mapStateToProps</code> que é responsável pela leitura do estado global;
+
+ 6. O segundo deles, chamado de <code>mapDispatchToProps</code> é responsável por enviar as actions, que por sua vez, irão instruir o reducer a alterar o seu estado atual;
+
+ 7. As pessoas usuárias que utilizam a aplicação interagem com ela e disparam eventos;
+
+ 8. Esses <i>eventos</i> são chamados de <b><i>Actions</i></b> e são enviadas ao <code>Store</code> e processadas no <code>Reducer</code> por meio de um <code>dispatch</code>;
+
+ 9. <b><i>Actions</i></b>, por convenção, devem possuir ser um <i>objeto javascript</i> que deverá possuir uma chave (<i>key</i>) chamada <code>type</code>;
+
+ 10. O(s) <code>reducer(s)</code> recebe(m) essas <b><i>Actions</i></b> e realiza(m) alguma alteração no estado da aplicação (criando um novo estado) e salvando o novo estado no <code>Store</code> para manter a imutabilidade do mesmo;
+
+ 11. Os componentes conectados ao <code>Store</code> "observam" tais mudanças e atualizam a visualização da aplicação (View);
+
