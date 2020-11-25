@@ -182,7 +182,7 @@
   Quando a função <code>combineReducers</code> é utilizada, o estado da nossa aplicação fica disposto em um objeto. Nesse objeto, cada reducer será representado por uma chave com o seu respectivo
   nome e terá como valor o estado que é responsável por controlar.
 
-  Observe como o estado inicial da aplicação ficaria:
+  Observe como o estado inicial da nossa aplicação ficaria:
 
   ```javascript
   {
@@ -191,5 +191,10 @@
   ```
 
  <blockquote> Dica super valiosa: Para facilitar o uso cotidiano do Redux nas suas aplicações, sugerimos baixar a extensão <code>Redux Devtools</code>, na seção de <code>Recursos Adicionais</code>
- você encontrará um link explicando como instalá-la e utilizá-la.
+ você encontrará um link explicando como instalá-la e utilizá-la. :smiley:
  </blockquote>
+
+ Pronto! Store, Reducer e Action corretamente criados. Pode parecer que isso está fora de contexto de uma aplicação React, e até o momento realmente está porque essa é puramente a estrutura
+ do <code>Redux</code>. O próximo passo é conectá-lo ao React.
+
+ 
