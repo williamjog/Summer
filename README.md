@@ -47,7 +47,7 @@
   Atualmente, é muito comum o a combinação de **Redux** e ***React***. Para que isto possa ocorrer, é necessário realizar uma **conexão**
   entre o Redux e o framekwork escolhido.
 
-  Para realizar essa conexão utilizamos a biblioteca **React Redux**, ela é o responsável por fazer esse ***bind*** e você pode instalá-la
+  Para realizar essa conexão utilizamos a biblioteca **React Redux**, ela é a responsável por fazer esse ***bind*** e você pode instalá-la
   utilizando o comando abaixo no seu terminal:
 
   ```bash
@@ -98,3 +98,18 @@
   <h4><sup><code>redux</code> é a biblioteca que possui toda a implementação do <b><i>Redux</i></b>.</h4>
 
   <h4><sup><code>react redux</code> é a biblioteca que realiza a conexão necessária para a implementação conjunta do <b><i>React</i></b> e do <b><i>Redux</i></b>.</h4>
+
+  Agora, vamos imaginar que precisamos implementar uma solução com <b><i>Redux</i></b> para uma aplicação que simula um almoxarifado, neste almoxarifado podemos adicionar 
+  e excluir itens, tudo baseado em seu estado atual.
+
+  O nosso primeiro passo deverá ser criar o armazém universal de todos estados da nossa aplicação, o <b><i>Store</b></i>. 
+
+  Portanto, vamos criar um arquivo <code>src/store/index.js que irá conter o seguinte conteúdo:
+
+  ```javascript
+  import { createStore } from 'redux';
+
+  const store = createStore();
+
+  export default store;
+  ```
