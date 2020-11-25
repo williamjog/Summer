@@ -53,5 +53,4 @@
   ```bash
   npm install react-redux
   ```
-
   Comando para instalar a biblioteca **React Redux**.
