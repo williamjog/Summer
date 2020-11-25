@@ -414,6 +414,8 @@ Você irá desenvolver 2 exercícios para ampliar seus conhecimentos de Redux co
 
  1. 
 
+ 2.
+
 ## Recursos adicionais (opcional)
 
  * <a href="https://medium.com/the-web-tub/managing-your-react-state-with-redux-affab72de4b1">Managing your React state with Redux</a>
