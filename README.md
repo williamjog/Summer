@@ -370,3 +370,6 @@ Por sua vez, a estrutura de *conexão* entre o *React* e o ***Redux*** é compos
 
 ## Fluxo das informações no Redux
 
+ Abaixo, temos uma imagem que demonstra, de forma simplificada, o caminho das informações dentro de uma aplicação React com ***Redux***:
+
+ ![reduxInformationTraffic](https://miro.medium.com/max/1200/0*95tBOgxEPQAVq9YO.png)
