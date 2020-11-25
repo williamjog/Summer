@@ -71,7 +71,7 @@
 
   ### Reducer
   <blockquote>
-  Reducers são funções que recebem o estado atual (<i>current state</i>) e uma <i>action</i> como argumentos e retornam um novo estado (<i>state</i>). Em outras palavras,
+  Reducers são funções que recebem o estado atual (<i>current state</i>) e uma <i>action</i> como argumentos e retornam um novo estado (<i>new state</i>). Em outras palavras,
   <code>(estado, action) => novoEstado </code>.
   </blockquote>
 
