@@ -47,7 +47,7 @@
   Atualmente, é muito comum o a combinação de **Redux** e ***React***. Para que isto possa ocorrer, é necessário realizar uma **conexão**
   entre o Redux e o framekwork escolhido.
 
-  Para realizar essa conexão utilizamos a biblioteca **React Redux**, ela é o responsável por fazer esse ***bind*** e você pode instalá-lo
+  Para realizar essa conexão utilizamos a biblioteca **React Redux**, ela é o responsável por fazer esse ***bind*** e você pode instalá-la
   utilizando o comando abaixo no seu terminal:
 
   ```bash
@@ -60,13 +60,13 @@
   ### Store
   <blockquote>
   Uma <i>store</i> contém e <i><b>compartilha</b></i> toda a árvore de estado da sua aplicação. A única maneira de alterar o estado dentro dela é enviando uma <i>action</i> 
-  através de um <i>dispatcher</i>.
+  através de um <i>dispatch</i>.
   </blockquote>
 
   ### Action
   <blockquote>
-  As <i><b>actions</b></i> são <b>objetos javascript</b> que indicam diretamente uma <b>intenção</b> de mudança/alteração no <i>State</i> aplicação, essa Action pode ser algo disparado pelo próprio 
-  usuário ou algo disparado pela própria aplicação.
+  As <i><b>actions</b></i> são <b>objetos javascript</b> que indicam diretamente uma <b>intenção</b> de mudança/alteração no <i>State</i> aplicação, essa <i><b>action</b></i> 
+  pode ser algo disparado pelo próprio usuário ou algo disparado pela própria aplicação.
   </blockquote>
 
   ### Reducer
@@ -97,4 +97,4 @@
   ```
   <h4><sup><code>redux</code> é a biblioteca que possui toda a implementação do <b><i>Redux</i></b>.</h4>
 
-  <h4><sup><code>react redux</code> é a biblioteca que realiza a conexão necessária para a implementação do <b><i>React</i></b> e do <b><i>Redux</i></b>.</h4>
+  <h4><sup><code>react redux</code> é a biblioteca que realiza a conexão necessária para a implementação conjunta do <b><i>React</i></b> e do <b><i>Redux</i></b>.</h4>
