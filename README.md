@@ -99,7 +99,7 @@
 
   <h4><sup><code>react redux</code> é a biblioteca que realiza a conexão necessária para a implementação conjunta do <b><i>React</i></b> e do <b><i>Redux</i></b>.</h4>
 
-  Agora, vamos imaginar que precisamos implementar uma solução com <b><i>Redux</i></b> para uma aplicação que simula um almoxarifado, neste almoxarifado podemos adicionar 
+  Agora, vamos imaginar que precisamos implementar uma solução com <b><i>Redux</i></b> para uma aplicação que simula uma lista de compras, neste caso podemos adicionar 
   e excluir itens, tudo baseado em seu estado atual.
 
   O nosso primeiro passo é criar o armazém universal de todos estados da nossa aplicação, o <b><i>Store</b></i>. É nele que ficarão <b>todos</b> os possíveis estados da nossa
@@ -114,3 +114,36 @@
 
   export default store;
   ```
+
+  Mas, atenção! A função <code>createStore</code> necessita receber como parâmetro um <code>reducer</code>. Portanto, vamos criar um no arquivo <code>src/reducers/index.js</code>.
+
+  O <code>reducer</code>, no nosso caso em específico, deverá ser capaz de adicionar e remover itens da lista de compras, tudo baseado no <code>state</code> retornado.
+
+  ```javascript
+  const INITIAL_STATE = [];
+
+  function shoppingListReducer(state = INITIAL_STATE, action) {
+    switch (action.type) {
+      case 'ADD_PRODUCT':
+        return [...state, action.value];
+      default:
+        return state;
+    }
+  }
+
+  export default shoppingListReducer;
+  ```
+
+  Vamos entender o que está acontecendo:
+
+    * Definimos um estado inicial para o nosso reducer de lista de compras, neste caso na varíavel INITAL_STATE que recebe um array vazio inicialmente, pois
+    vamos precisar adicionar itens que pretendemos comprar no futuro.
+
+    * A função shoppingListReducer é o nosso reducer, que recebe como parâmetro default, ou seja, se não enviarmos um novo estado o reducer irá receber o que 
+    existe dentro do array INITIAL_STATE, o estado inicial que acabamos de definir e uma action.
+
+    * A action, por convenção mesmo, é um objeto que deverá possuir uma chave (key) type. É exatamente com essa chave que o reducer irá manipular o estado,
+    através de um switch na maioria dos casos.
+
+    * No exemplo acima, estamos querendo adicionar um produto a nossa lista de compras, então caso o type da action seja *ADD_PRODUCT*, vamos utilizar o operador
+    spread para que assim seja mantido as informações anteriores, e vamos passar também o value da action para complementar o estado atual com esta nova informação.
