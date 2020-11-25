@@ -289,7 +289,7 @@
 
  * Criamos um <code>input</code> do tipo texto para a pessoa usuária possa adicionar um produto à sua lista de compras. A cada mudança no valor do <code>input</code>, este é salvo na chave <code>product</code> por meio da propriedade <code>onChange</code>.
 
- * Mas, calma lá! Tem um botão com a propriedade <code>onClick</code> criado, passando para uma função <code>add</code> que está presente nas <code>props</code> do componente. O que é? Como vive? Do que se alimenta? E o que é esse <code>connect</code>? Vamos entender agora: 
+ * Mas, calma lá! Tem um botão com a propriedade <code>onClick</code> criado, passando para uma função <code>add</code> que está presente nas <code>props</code> do componente. O que é? Como vive? Do que se alimenta? E o que é esse <code>connect</code>? Vamos entender logo abaixo.
 
 
 ## mapDispatchToProps
@@ -348,9 +348,10 @@
 
  * Mas, calma aí! Nós estamos fazendo um map com os elementos presentes no array <code>shoppingList</code> que, por sua vez, está presente no componente como ***props***. Mas como isso foi parar lá? Foi mágica? Não! Vamos entender, finalmente, o <code>mapStateToProps</code>.
 
+
 ## mapStateToProps
 
-A função <code>mapStateToProps</code> realiza a "<b><i>leitura</i></b>" das entidades armazenadas nos estados para uma ***prop***, ela funciona como um <code>getter</code> do estado global e a insere em uma ***prop*** que você, como pessoa desenvolvedora, irá escolher qualquer bom nome, no exemplo anterior nomeamos a ***prop*** como <code>shoppingList</code>, mas poderia ser qualquer outro nome!
+A função <code>mapStateToProps</code> realiza a "<b><i>leitura</i></b>" das informações armazenadas nos estados para uma ***prop***, ela funciona como um <code>getter</code> do estado global e a insere em uma ***prop*** que você, como pessoa desenvolvedora, irá escolher qualquer bom nome, no exemplo anterior nomeamos a ***prop*** como <code>shoppingList</code>, mas poderia ser qualquer outro nome!
 
 Perceba que as estruturas dos métodos nativos <code>mapStateToProps</code> e <code>mapDispatchToProps</code> sempre seguirão o mesmo padrão, o que irá mudar são as propriedades que vamos acessar ou <i><b>actions</b></i> que vamos disparar! 
 
@@ -364,7 +365,8 @@ A estrutura react-redux está concluída! Perceba que a estrutura pura do ***Red
 
 Por sua vez, a estrutura de *conexão* entre o *React* e o ***Redux*** é composta basicamente por: 
 
-* <code>provider</code>, <code>connect</code>, <code>dispatch</code>, <code>mapDispatchToProps</code> e <code>mapStateToProps</code>. 
+ * <code>provider</code>, <code>connect</code>, <code>dispatch</code>, <code>mapDispatchToProps</code> e <code>mapStateToProps</code>. 
+
 
 ## Fluxo das informações no Redux
 
