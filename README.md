@@ -145,9 +145,9 @@
   * A <b><i>action</i></b>, por convenção, é um objeto que deverá possuir uma chave (<i>key</i>) chamada <code>type</code>. É exatamente com essa chave que o <code>reducer</code> irá manipular o estado, através de um <code>switch</code> na maioria dos casos.
 
   * No exemplo acima, estamos querendo adicionar um produto a nossa lista de compras, então caso o <code>type</code> da action seja <code>ADD_PRODUCT</code>, vamos utilizar o operador
-  <code>spread</code> para que assim seja mantido as informações anteriores, e vamos passar também o value da <b><i>action</i></b> para complementar o estado atual com esta nova informação.
+  <code>spread</code> para que assim seja mantido as informações anteriores, e vamos passar também o value da <b><i>action</i></b> para incrementar o estado atual com esta nova informação.
 
-  * Caso o <code>type</code> da action não seja <code>ADD_PRODUCT</code>, então o reducer irá retornar somente o estado atual, não alterando nenhuma informação.
+  * Caso o <code>type</code> da action não seja <code>ADD_PRODUCT</code>, então o <code>reducer</code> irá retornar somente o estado atual, não alterando nenhuma informação.
 
   Agora, vamos criar o arquivo <code>src/actions/index.js</code>, que irá conter a nossa <code>action</code>:
 
@@ -157,3 +157,21 @@
 
   Essa <b><i>action</i></b>, que é um objeto javascript, deve possuir a <i>key</i> type ou mais outras <i>keys</i>, caso seja interessante. Perceba que também criamos uma varíavel chamada 
   <code>value</code> que irá guardar o valor recebido da <b><i>action</i></b>.
+
+  Depois, precisamos voltar ao nosso <b><i>store</b></i> e passar como parâmetro o nosso <code>reducer</code>, para que a função <code>createStore</code> esteja escrita corretamente.
+
+  ```javascript
+  import { createStore, combineReducers } from 'redux';
+  import shoppingListReducer from '../reducers';
+
+  const rootReducer = combineReducers({ shoppingListReducer });
+
+  const store = createStore(rootReducer);
+
+  export default store;
+  ```
+
+  Note que utilizamos a função <code>combineReducer</code>, que faz exatamente o que o nome sugere combina todos os reducers passados como parâmetro, passando como parâmetro um objeto que contém o nosso <code>reducer</code>. Perceba que é interessante, mesmo que tenhamos apenas um <code>reducer</code> na nossa aplicação, utilizar o método <code>combineReducer</code>, pois se for necessário (e provavelmente será!) adicionar novos <code>reducers</code> caso a aplicação
+  cresca, não será precisaremos alterar toda a lógica constrúida anteriormente. :sunglasses:
+
+  Continuando, passamos para a função <code>createStore</code> o <code>rootReducer</code> que contém o nosso <code>reducer</code> criado anteriormente.
