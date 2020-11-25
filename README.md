@@ -338,12 +338,12 @@
   }
 
   const mapStateToProps = state => ({
-    shoppingList: state.listReducer});
+    shoppingList: state.shoppingListReducer});
 
   export default connect(mapStateToProps, null)(List);
 ```
  Vamos dar uma analisada nesse código:
 
- * Mas, calma aí! Nós estamos fazendo um map com os elementos presentes no array shoppingList que, por sua vez, está presente como props. Mas como isso foi parar lá? Foi mágica? Não, vamos entender, finalmente, o <code>mapStateToProps</code>.
+ * Mas, calma aí! Nós estamos fazendo um map com os elementos presentes no array shoppingList que, por sua vez, está presente no componente como props. Mas como isso foi parar lá? Foi mágica? Não, vamos entender, finalmente, o <code>mapStateToProps</code>.
 
 ## mapStateToProps
