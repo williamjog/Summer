@@ -120,7 +120,7 @@
   O <code>reducer</code>, no nosso caso em específico, deverá ser capaz de adicionar e remover itens da lista de compras, tudo baseado no <code>state</code> retornado.
 
   ```javascript
-  const INITIAL_STATE = [];
+  const INITIAL_STATE = []; // por convenção utilizamos letras maíusculas para nomear constantes
 
   function shoppingListReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
@@ -365,3 +365,6 @@ A estrutura react-redux está concluída! Perceba que a estrutura pura do ***Red
 Por sua vez, a estrutura de *conexão* entre o *React* e o ***Redux*** é composta basicamente por: 
 
 * <code>provider</code>, <code>connect</code>, <code>dispatch</code>, <code>mapDispatchToProps</code> e <code>mapStateToProps</code>. 
+
+## Fluxo das informações no Redux
+
