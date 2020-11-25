@@ -358,7 +358,7 @@ No caso acima, o que iria mudar seria a ***prop*** lida do estado global, porém
 
 Por fim, <b><i>conectamos</i></b> o ***Redux*** ao componente, fazendo uso do <code>connect()()</code>. Como, neste caso, estamos fazendo apena a leitura dos dados, passamos a função  <code>mapStateToProps</code> e em seguida <code>null</code> no primeiro parênteses e o componente no segundo, respeitando assim a sintaxe.
 
-Pronto, ufa! A estrutura react-redux está concluída! Perceba que a estrutura pura do ***Redux*** constitui-se em: 
+A estrutura react-redux está concluída! Perceba que a estrutura pura do ***Redux*** constitui-se em: 
 
  * <b><i>store</i></b>, <b><i>actions</b></i> e <b><i>reducers</i></b>. 
 
