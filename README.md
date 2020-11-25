@@ -194,7 +194,30 @@
  você encontrará um link explicando como instalá-la e utilizá-la. :smiley:
  </blockquote>
 
- Pronto! Store, Reducer e Action corretamente criados. Pode parecer que isso está fora de contexto de uma aplicação React, e até o momento realmente está porque essa é puramente a estrutura
- do <code>Redux</code>. O próximo passo é conectá-lo ao React.
+ Pronto! <code>Store</code>, <code>Reducer</code> e <code>Action</code> corretamente criados. Pode parecer que isso está fora de contexto de uma aplicação React, e até o momento realmente está 
+ porque essa é puramente a estrutura do <code>Redux</code>. O próximo passo é conectá-lo ao React.
 
- 
+ Para fazermos uso do estado compartilhado que o **Redux** provê, vamos editar o arquivo <code>src/App.js</code> com as seguintes informações:
+
+ ```javascript
+  import React from 'react';
+  import { Provider } from 'react-redux';
+  import store from './store';
+
+  class App extends React.Component {
+    render() {
+      return (
+        <div>
+          <Provider store={ store }> 
+            // o provider é o meio pelo qual disponibilizamos o Store através de seu import.
+            // componentes aqui
+          </Provider>
+        </div>
+      );
+    }
+  }
+
+  export default App;
+ ```
+
+
