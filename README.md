@@ -38,7 +38,7 @@
   necessitam, que neste cenário hipotético, possuem como único objetivo fazer a intermediação da ***props*** para o componente desejado.
 
 ## Conteúdos
-###### <sup>Tempo sugerido para realização: 120 minutos</sup>
+#### <sup>Tempo sugerido para realização: 120 minutos</sup>
   
   Redux é uma biblioteca externa que pode ser utilizada com React, Vue, Angular e JavaScript puro, para dar *poucos* exemplos.
 
@@ -71,5 +71,6 @@
 
   ### Reducer
   <blockquote>
-  É uma função <i>JavaScript</i> que recebe o estado atual (current state) e a <i>action</i> enviada pelo <i>dispatcher</i>
+  Reducers são funções que recebem o estado atual (<i>current state</i>) e uma <i>action</i> como argumentos e retornam um novo estado (<i>State</i>). Em outras palavras,
+  <code>(estado, action) => novoEstado </code>
   </blockquote>
