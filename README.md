@@ -344,6 +344,6 @@
 ```
  Vamos dar uma analisada nesse código:
 
- * Estamos fazendo um map com os elementos presentes no array shoppingList que, por sua vez, está presente como props. Mas como isso foi parar lá? Foi mágica? Não, vamos entender, finalmente, o <code>mapStateToProps</code>.
+ * Mas, calma aí! Nós estamos fazendo um map com os elementos presentes no array shoppingList que, por sua vez, está presente como props. Mas como isso foi parar lá? Foi mágica? Não, vamos entender, finalmente, o <code>mapStateToProps</code>.
 
 ## mapStateToProps
