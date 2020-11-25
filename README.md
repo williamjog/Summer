@@ -338,7 +338,8 @@
   }
 
   const mapStateToProps = state => ({
-    shoppingList: state.shoppingListReducer});
+    shoppingList: state.shoppingListReducer
+  });
 
   export default connect(mapStateToProps, null)(ShoppingList); // o mapDispatchToProps está null porque não estamos enviando nada para o estado global, apenas lendo dele!
 ```
