@@ -26,7 +26,7 @@
 
   Ufa! Viu que trabalho? Só de pensar dá pra se perder! :scream:
 
-  Agora imagine que você não tenha uma ***props*** e sim dezenas delas, como você faria? :sweat:
+  Agora imagine que você não tenha uma ***prop*** e sim dezenas delas, como você faria? :sweat:
 
   Já pensou no trabalhão que seria isso e na quantidade de possíveis erros que poderiam acontecer? :grimacing:
 
@@ -136,11 +136,11 @@
 
   Vamos entender o que está acontecendo:
 
-  * Definimos um estado inicial para o nosso <code>reducer</code> de lista de compras, neste caso na varíavel <code>INITAL_STATE</code> que recebe um array vazio inicialmente, pois
+  * Definimos um estado inicial para o nosso <code>reducer</code> de lista de compras, neste caso na varíavel <code>INITIAL_STATE</code> que recebe um array vazio inicialmente, pois
   vamos precisar adicionar itens que pretendemos comprar no futuro.
 
   * A função <code>shoppingListReducer</code> é o nosso <code>reducer</code>, que recebe como parâmetro default, ou seja, se não enviarmos um novo estado o <code>reducer</code> irá receber o que 
-  existe dentro do array <code>INITAL_STATE</code>, o estado inicial que acabamos de definir e uma <b><i>action</i></b>.
+  existe dentro do array <code>INITIAL_STATE</code>, o estado inicial que acabamos de definir e uma <b><i>action</i></b>.
 
   * A <b><i>action</i></b>, por convenção, é um objeto que deverá possuir uma chave (<i>key</i>) chamada <code>type</code>. É exatamente com essa chave que o <code>reducer</code> irá manipular o estado, através de um <code>switch</code> na maioria dos casos.
 
@@ -171,16 +171,15 @@
   export default store;
   ```
 
-  Note que utilizamos a função <code>combineReducer</code>, que faz exatamente o que o nome sugere combina todos os reducers passados como parâmetro, passando como parâmetro um objeto que contém o nosso <code>reducer</code>. 
+  Note que utilizamos a função <code>combineReducers</code>, que faz exatamente o que o nome sugere combina todos os reducers passados como parâmetro, passando como parâmetro um objeto que contém o nosso <code>reducer</code>. 
   
-  <blockquote> Dica: Perceba que é interessante, mesmo que tenhamos apenas um <code>reducer</code> na nossa aplicação, utilizar o método <code>combineReducer</code>, pois se for necessário (e provavelmente será!) adicionar novos <code>reducers</code> caso a aplicação
+  <blockquote> Dica: Perceba que é interessante, mesmo que tenhamos apenas um <code>reducer</code> na nossa aplicação, utilizar o método <code>combineReducers</code>, pois se for necessário (e provavelmente será!) adicionar novos <code>reducers</code> caso a aplicação
   cresca, não precisaremos alterar toda a lógica constrúida anteriormente. :sunglasses:
   </blockquote>
 
   Continuando, passamos para a função <code>createStore</code> o <code>rootReducer</code> que contém o nosso <code>reducer</code> criado anteriormente.
 
-  Quando a função <code>combineReducers</code> é utilizada, o estado da nossa aplicação fica disposto em um objeto. Nesse objeto, cada reducer será representado por uma chave com o seu próprio
-  nome que definimos e terá como valor o estado que é responsável por controlar.
+  Quando a função <code>combineReducers</code> é utilizada, o estado da nossa aplicação fica inserido em um objeto. Nesse objeto, cada <code>reducer</code> será representado por uma chave com o seu próprio nome que definimos e terá como valor o estado que é responsável por controlar.
 
   Observe como o estado inicial da nossa aplicação ficaria:
 
@@ -201,7 +200,7 @@
 
  ```javascript
   import React from 'react';
-  import { Provider } from 'react-redux'; // importamos de forma desestruturada o Provider da biblioteca react-redux
+  import { Provider } from 'react-redux'; // importamos de forma { desestruturada } o Provider da biblioteca react-redux;
   import store from './store';
 
   class App extends React.Component {
@@ -253,11 +252,11 @@
   ```javascript
   import React from 'react';
   import { connect } from 'react-redux';
-  import { addProduct } from './actions';
-
+  import { addProduct } from './actions'; // como definimos o arquivo como index.js não precisamos especificar a qual arquivo estamos nos referindo!
+  
   class InputsList extends React.Component {
-    constructor(props) {
-      super(props);
+    constructor() {
+      super();
       this.state = { product: '' };
     }
 
@@ -266,7 +265,7 @@
         <div>
           <input
             type="text"
-            placeholder="Digite o nome do produto"
+            placeholder="Digite o nome do produto a ser adicionado"
             onChange={event => this.setState({ product: event.target.value })}
           />
           <button onClick={() => this.props.add(this.state.product)}>
@@ -282,3 +281,26 @@
 
   export default connect(null, mapDispatchToProps)(InputsList);
  ```
+
+ Calma! Vamos entender o que está acontecendo aqui:
+
+ * Primeiro de tudo, nós estamos definindo um estado local do componente chamado <code>product</code> que inicia com uma string vazia. Interessante notar que, apesar de estarmos usando o Redux, que centraliza todos os states, caso exista algum estado o qual não precisamos inserir no estado global, podemos declará-lo localmente sem problema algum! Isto é normal e muito comum, pois nem tudo precisa, necessariamente, estar no estado global da aplicação.
+
+ * Criamos um input do tipo texto para a pessoa usuária possa adicionar um produto à sua lista de compras. A cada mudança no valor do input, este é salvo na chave <code>product</code> através da propriedade <code>onChange</code>.
+
+ * Mas, calma lá! Tem um botão com a propriedade onClick criado, passando para uma função <code>add</code> que está presente nas <code>props</code> do componente. O que é? Como vive? Do que se alimenta? E o que é esse <code>connect</code>? Vamos entender agora: 
+
+
+## mapDispatchToProps
+
+  A função <code>mapDispatchToProps</code> é a responsável por enviar uma ação para o reducer. Ou seja, é como se fosse um setter de uma propriedade para o estado global, fazendo uma analogia aos nossos <code>get</code> e <code>set</code> famosos nesse mundo da programação.
+
+  Para podermos ter acesso às essas funcionalidades do Redux, seja a de ler (mapStateToProps, que veremos a seguir!) os dados ou enviá-los (mapDispatchToProps), precisamos acessá-las como ***props*** de um componente. Por isso, como o próprio nome da função infere, ela mapeia (envia) os <code>dispatchs</code> para as ***props*** do componente no qual estamos trabalhando.
+
+  Perceba que no ínicio do arquivo estamos importanto a action addProduct, criada por nós anteriormente. Neste caso, estamos nomeando arbitrariamente (pode ser o nome que você quiser!) uma propriedade chamada <code>add</code>, que faz o dispatch da action addProduct com um parâmetro arbitrário, porém é interessante associar um nome que faça sentido, chamado product.
+
+  O mapDispatchToProps (setter para o estado global das ***props***), assim como o mapStateToProps (já iremos ver!), podem ser criados via funções convencionais (<code>functions</code>) ou arrow functions (<code>=></code>). O que importa é que o retorno seja um objeto, pois o <b><i>Redux</i></b> espera desta assim.
+
+  Não esqueça! Podemos apenas enviar uma <code>action</code> para um <code>reducer</code> através de um <code>dispatch</code>, como demonstrado no código acima. Ou seja, o dispatch é uma função que recebe outra função, definida por nós, que dentro dela está a <code>action ({ type: 'ADD_PRODUCT', value })</code>.
+
+  E por fim estamos utilizando a função <code>connect</code> para, como o próprio nome dá a entender, <i>conectar</i> o <code>Redux</code> ao nosso componente.
