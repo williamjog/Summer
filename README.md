@@ -62,6 +62,7 @@
   Uma <i>store<i> contém e <i><b>compartilha<b><i> toda a árvore de estado da sua aplicação. A única maneira de alterar o estado dentro dela é enviando uma <i>action<i>.
   <blockquote>
 
+
   ### Action
   <blockquote>
   As <i><b>actions<i><b> são <b>objetos javascript<b> que indicam diretamente uma <b>intenção<b> de mudança/alteração na aplicação, essa Action pode ser algo disparado pelo próprio 
