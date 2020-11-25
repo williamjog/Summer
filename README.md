@@ -28,7 +28,7 @@
 
   Agora imagine que você não tenha uma ***props*** e sim dezenas delas, como você faria? :sweat:
 
-  Já pensou no trabalhão que seria isso? :grimacing:
+  Já pensou no trabalhão que seria isso e na quantidade de possíveis erros que poderiam acontecer? :grimacing:
 
   Pensando neste cenário, seria ótimo se houvesse uma maneira de **armazenar** tudo em um único local de fácil acesso, por exemplo
   em um estado unificado, não é mesmo?
@@ -53,4 +53,12 @@
   ```bash
   npm install react-redux
   ```
-  Comando para instalar a biblioteca **React Redux**.
+  ***React Redux*** é a biblioteca oficial para realizar a conexão entre React e o Redux.
+
+  Antes de continuarmos para o entendimento da estrutura do React com Redux, vamos recapitular alguns conceitos importantes:
+
+  ### Store
+  <blockquote>
+  Uma ***store*** contém toda a árvore de estado da sua aplicação. A única maneira de alterar o estado dentro dela é realizando um dispatch
+  de uma ação.
+  <blockquote>
