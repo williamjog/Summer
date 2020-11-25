@@ -136,14 +136,14 @@
 
   Vamos entender o que está acontecendo:
 
-    * Definimos um estado inicial para o nosso reducer de lista de compras, neste caso na varíavel INITAL_STATE que recebe um array vazio inicialmente, pois
-    vamos precisar adicionar itens que pretendemos comprar no futuro.
+  * Definimos um estado inicial para o nosso reducer de lista de compras, neste caso na varíavel <code>INITAL_STATE</code> que recebe um array vazio inicialmente, pois
+  vamos precisar adicionar itens que pretendemos comprar no futuro.
 
-    * A função shoppingListReducer é o nosso reducer, que recebe como parâmetro default, ou seja, se não enviarmos um novo estado o reducer irá receber o que 
-    existe dentro do array INITIAL_STATE, o estado inicial que acabamos de definir e uma action.
+  * A função shoppingListReducer é o nosso reducer, que recebe como parâmetro default, ou seja, se não enviarmos um novo estado o reducer irá receber o que 
+  existe dentro do array <code>INITAL_STATE</code>, o estado inicial que acabamos de definir e uma <b><i>action</i></b>.
 
-    * A action, por convenção mesmo, é um objeto que deverá possuir uma chave (key) type. É exatamente com essa chave que o reducer irá manipular o estado,
-    através de um switch na maioria dos casos.
+  * A <b><i>action</i></b>., por convenção mesmo, é um objeto que deverá possuir uma chave (key) <code>type</code>. É exatamente com essa chave que o reducer irá manipular o estado,
+  através de um <code>switch</code> na maioria dos casos.
 
-    * No exemplo acima, estamos querendo adicionar um produto a nossa lista de compras, então caso o type da action seja *ADD_PRODUCT*, vamos utilizar o operador
-    spread para que assim seja mantido as informações anteriores, e vamos passar também o value da action para complementar o estado atual com esta nova informação.
+  * No exemplo acima, estamos querendo adicionar um produto a nossa lista de compras, então caso o type da action seja <code>ADD_PRODUCT</code>, vamos utilizar o operador
+  <code>spread</code> para que assim seja mantido as informações anteriores, e vamos passar também o value da action para complementar o estado atual com esta nova informação.
