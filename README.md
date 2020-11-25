@@ -416,7 +416,10 @@ Você irá desenvolver 2 exercícios para ampliar seus conhecimentos de Redux co
 
 ## Recursos adicionais (opcional)
 
-<a href="https://medium.com/the-web-tub/managing-your-react-state-with-redux-affab72de4b1">Link to Header</a>
+ * <a href="https://medium.com/the-web-tub/managing-your-react-state-with-redux-affab72de4b1">Managing your React state with Redux</a>
 
+* <a href="https://medium.com/@hliojnior_34681/entenda-react-e-redux-de-uma-vez-por-todas-c761bc3194ca">Entendendo React e Redux de uma vez por todas</a>
 
+* <a href="https://react-redux.js.org/introduction/why-use-react-redux">Why Use React Redux?</a>
 
+* <a href="https://redux.js.org/introduction/getting-started">Getting Started with Redux</a>
