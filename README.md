@@ -59,5 +59,5 @@
 
   ### Store
   <blockquote>
-  Uma store contém toda a árvore de estado da sua aplicação. A única maneira de alterar o estado dentro dela é enviando uma <i>action<i>.
+  Uma <i>store<i> contém e <i><b>compartilha<b><i> toda a árvore de estado da sua aplicação. A única maneira de alterar o estado dentro dela é enviando uma <i>action<i>.
   <blockquote>
