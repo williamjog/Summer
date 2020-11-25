@@ -47,8 +47,8 @@
   Atualmente, é muito comum o a combinação de **Redux** e ***React***. Para que isto possa ocorrer, é necessário realizar uma **conexão**
   entre o Redux e o framekwork escolhido.
 
-  Para realizar essa conexão utilizamos a biblioteca **React Redux**, ele é o responsável por fazer esse ***bind*** e podemos instalá-lo
-  utilizando o comando abaixo no nosso terminal:
+  Para realizar essa conexão utilizamos a biblioteca **React Redux**, ela é o responsável por fazer esse ***bind*** e você pode instalá-lo
+  utilizando o comando abaixo no seu terminal:
 
   ```bash
   npm install react-redux
