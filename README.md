@@ -64,6 +64,6 @@
 
   ### Action
   <blockquote>
-  As <i><b>actions</b></i> são <b>objetos javascript</b> que indicam diretamente uma <b>intenção</b> de mudança/alteração na aplicação, essa Action pode ser algo disparado pelo próprio 
+  As <i><b>actions</b></i> são <b>objetos javascript</b> que indicam diretamente uma <b>intenção</b> de mudança/alteração no <i>State</i> aplicação, essa Action pode ser algo disparado pelo próprio 
   usuário ou algo disparado pela própria aplicação.
   </blockquote>
