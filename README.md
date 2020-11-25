@@ -2,7 +2,7 @@
 
 ## O que vamos aprender? 
 
-  Você irá aprender a integrar o Redux à suas aplicações React tradicionais.
+  Você irá aprender a integrar o Redux à suas aplicações React.
 
 ## Você será capaz de:
 
@@ -27,6 +27,7 @@
   Ufa! Viu que trabalho? Só de pensar dá pra se perder! :scream:
 
   Agora imagine que você não tenha uma ***props*** e sim dezenas delas, como você faria? :sweat:
+
   Já pensou no trabalhão que seria isso? :grimacing:
 
   Pensando neste cenário, seria ótimo se houvesse uma maneira de **armazenar** tudo em um único local de fácil acesso, por exemplo
@@ -44,7 +45,13 @@
   Ele é um ecossistema completo e robusto, tornando o compartilhamento de vários *states* algo possível na sua aplicação React.
 
   Atualmente, é muito comum o a combinação de **Redux** e ***React***. Para que isto possa ocorrer, é necessário realizar uma **conexão**
-
   entre o Redux e o framekwork escolhido.
-  
-  Para realizar essa conexão utilizamos a biblioteca **React Redux** 
+
+  Para realizar essa conexão utilizamos a biblioteca **React Redux**, ele é o responsável por fazer esse ***bind*** e podemos instalá-lo
+  utilizando o comando abaixo no nosso terminal:
+
+  ```bash
+  npm install react-redux
+  ```
+
+  Comando para instalar a biblioteca **React Redux**.
