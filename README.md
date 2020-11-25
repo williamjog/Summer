@@ -277,7 +277,8 @@
   }
 
   const mapDispatchToProps = dispatch => ({
-    add: product => dispatch(addProduct(product))});
+    add: product => dispatch(addProduct(product))
+  });
 
   export default connect(null, mapDispatchToProps)(InputsList); // O null ocupa o lugar do mapStateToProps, afinal não precisamos ler nada do estado global, apenas enviar uma prop para lá!
  ```
