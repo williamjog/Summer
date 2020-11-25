@@ -364,4 +364,4 @@ A estrutura react-redux está concluída! Perceba que a estrutura pura do ***Red
 
 Por sua vez, a estrutura de *conexão* entre o *React* e o ***Redux*** é composta basicamente por: 
 
-* <code>provider</code>, <code>connect</code>, <code>dispatch</code>, <code>mapDispatchToProps </code> e <code>mapStateToProps</code>. 
+* <code>provider</code>, <code>connect</code>, <code>dispatch</code>, <code>mapDispatchToProps</code> e <code>mapStateToProps</code>. 
