@@ -402,7 +402,7 @@ Por sua vez, a estrutura de *conexão* entre o *React* e o ***Redux*** é compos
 ## Exercícios
 #### <sup>Tempo sugerido para realização: 80 minutos</sup>
 
-## Agora a prática
+### Agora a prática
 
 Você irá desenvolver 2 exercícios para ampliar seus conhecimentos de Redux com React:
  
