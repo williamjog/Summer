@@ -71,6 +71,31 @@
 
   ### Reducer
   <blockquote>
-  Reducers são funções que recebem o estado atual (<i>current state</i>) e uma <i>action</i> como argumentos e retornam um novo estado (<i>State</i>). Em outras palavras,
-  <code>(estado, action) => novoEstado </code>
+  Reducers são funções que recebem o estado atual (<i>current state</i>) e uma <i>action</i> como argumentos e retornam um novo estado (<i>state</i>). Em outras palavras,
+  <code>(estado, action) => novoEstado </code>.
   </blockquote>
+
+  ### Dispatch
+  <blockquote>
+  É uma função cuja responsabilidade é enviar uma ação (<i>action</i>) para processamento no <b><i>Reducer</i></b>.
+  </blockquote>
+
+## Configurando Redux com React
+
+  Agora que recapitulamos estes conceitos muito importantes, estamos prontos para criar e configurar uma aplicação React que fará uso do ***Redux***.
+
+  Primeiro passo, vamos criar uma aplicação React tradicional:
+
+  ```bash
+  npx create-react-app my-app
+  ```
+
+  Após, vamos instalar as dependências necessárias:
+
+  ```bash
+  npm install --save redux react-redux
+  ```
+  
+  <sup><code>redux</code> é a biblioteca que possui toda a implementação do <b><i>Redux</i></b>.
+
+  <sup><code>react redux</code> é a biblioteca que realiza a conexão necessária para a implementação do <b><i>React</i></b> e do <b><i>Redux</i></b>.
