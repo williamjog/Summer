@@ -44,7 +44,7 @@
 
   Ele é um ecossistema completo e robusto, tornando o compartilhamento de vários *states* algo possível na sua aplicação React.
 
-  Atualmente, é muito comum o a combinação de **Redux** e ***React***. Para que isto possa ocorrer, é necessário realizar uma **conexão**
+  Atualmente, é muito comum a combinação de **Redux** e ***React***. Para que isto possa ocorrer, é necessário realizar uma **conexão**
   entre o Redux e o framekwork escolhido.
 
   Para realizar essa conexão utilizamos a biblioteca **React Redux**, ela é a responsável por fazer esse ***bind*** e você pode instalá-la
